@@ -1,0 +1,32 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.rizecookey.ctedit.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "accessor.ClientboundContainerSetContentPacketAccessor",
+    "accessor.ClientboundContainerSetSlotPacketAccessor",
+    "accessor.ClientboundUpdateAttributesPacketAccessor",
+    "accessor.EnchantmentsAccessor",
+    "accessor.WeaponTypeAccessor",
+    "extension.ServerPlayerExtensionMixin",
+    "feature.enchantment.SlashingEnchantmentMixin$PlayerMixin",
+    "modifier.AttackModifierMixin$PlayerMixin",
+    "modifier.IncomingPacketModifierMixin$ServerboundContainerClickPacketMixin",
+    "modifier.IncomingPacketModifierMixin$ServerboundSetCreativeModeSlotPacketMixin",
+    "modifier.OutgoingPacketModifierMixin$ServerGamePacketListenerImplMixin",
+    "modifier.ShieldModifierMixin$LivingEntityMixin",
+    "modifier.ShieldModifierMixin$PlayerMixin",
+    "modifier.ShieldModifierMixin$ServerGamePacketListenerImplMixin",
+    "modifier.ShieldModifierMixin$ServerPlayerMixin",
+    "modifier.ShieldModifierMixin$ShieldItemMixin",
+    "modifier.WeaponMetadataMixin$WeaponTypeMixin",
+    "update.UpdateItemInfoMixin$ServerGamePacketListenerImplMixin",
+    "update.UpdateItemUseMixin$LivingEntityMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
