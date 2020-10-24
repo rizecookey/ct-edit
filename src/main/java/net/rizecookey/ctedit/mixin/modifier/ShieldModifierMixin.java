@@ -2,6 +2,7 @@ package net.rizecookey.ctedit.mixin.modifier;
 
 import com.mojang.authlib.GameProfile;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket;
 import net.minecraft.network.protocol.game.ServerboundSetCarriedItemPacket;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.network.ServerGamePacketListenerImpl;
@@ -58,8 +59,6 @@ public abstract class ShieldModifierMixin {
 
         @Shadow public abstract ItemStack getBlockingItem();
 
-        @Shadow public abstract void knockback(float f, double d, double e);
-
         @Redirect(method = "hurt", at = @At(value = "INVOKE", target = "Ljava/lang/Math;min(FF)F", ordinal = 0))
         public float modifyBlockedDamage(float a, float b, DamageSource damageSource, float f) {
             return b * ShieldItem.getShieldBlockDamageValue(this.getBlockingItem());
@@ -67,10 +66,6 @@ public abstract class ShieldModifierMixin {
 
         @Redirect(method = "blockedByShield", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;knockback(FDD)V"))
         public void cancelKnockback(LivingEntity livingEntity, float f, double d, double e) {
-            this.hasImpulse = true;
-            Vec3 vec3 = this.getDeltaMovement();
-            Vec3 vec32 = (new Vec3(d, 0.0D, e)).normalize().scale(f);
-            this.setDeltaMovement(vec3.x / 2.0D - vec32.x, vec3.y, vec3.z / 2.0D - vec32.z);
         }
     }
 
