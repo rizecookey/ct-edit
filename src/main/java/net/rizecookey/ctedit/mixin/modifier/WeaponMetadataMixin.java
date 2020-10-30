@@ -11,17 +11,17 @@ public abstract class WeaponMetadataMixin {
     @SuppressWarnings("ConstantConditions")
     @Mixin(WeaponType.class)
     public static abstract class WeaponTypeMixin {
-        @Inject(method = "getSpeed", at = @At("RETURN"), cancellable = true)
-        public void modifySpeeds(Tier tier, CallbackInfoReturnable<Float> cir) {
-            if ((Object) this == WeaponType.SWORD) {
-                cir.setReturnValue(0.0F);
+        @Inject(method = "getReach", at = @At("RETURN"), cancellable = true)
+        public void modifyReach(Tier tier, CallbackInfoReturnable<Float> cir) {
+            if ((Object) this == WeaponType.AXE) {
+                cir.setReturnValue(0.5F);
             }
         }
 
-        @Inject(method = "getReach", at = @At("RETURN"), cancellable = true)
+        @Inject(method = "getDamage", at = @At("RETURN"), cancellable = true)
         public void modifyDamage(Tier tier, CallbackInfoReturnable<Float> cir) {
             if ((Object) this == WeaponType.AXE) {
-                cir.setReturnValue(0.5F);
+                cir.setReturnValue(tier.getAttackDamageBonus() + 4.0F);
             }
         }
     }
