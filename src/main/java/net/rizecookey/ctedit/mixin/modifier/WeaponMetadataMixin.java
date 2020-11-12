@@ -18,6 +18,7 @@ public abstract class WeaponMetadataMixin {
             }
         }
 
+
         @Inject(method = "getDamage", at = @At("RETURN"), cancellable = true)
         public void modifyDamage(Tier tier, CallbackInfoReturnable<Float> cir) {
             if ((Object) this == WeaponType.AXE) {
