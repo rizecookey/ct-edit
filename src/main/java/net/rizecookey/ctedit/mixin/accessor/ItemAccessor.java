@@ -9,8 +9,8 @@ import java.util.UUID;
 @Mixin(Item.class)
 public interface ItemAccessor {
     @Accessor(value = "BASE_ATTACK_DAMAGE_UUID")
-    static UUID BASE_ATTACK_DAMAGE_UUID() { return null; };
+    static UUID BASE_ATTACK_DAMAGE_UUID() { return null; }
 
     @Accessor(value = "BASE_ATTACK_SPEED_UUID")
-    static UUID BASE_ATTACK_SPEED_UUID() { return null; };
+    static UUID BASE_ATTACK_SPEED_UUID() { return null; }
 }

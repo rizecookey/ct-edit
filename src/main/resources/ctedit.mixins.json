@@ -21,6 +21,7 @@
     "modifier.ShieldModifierMixin$PlayerMixin",
     "modifier.ShieldModifierMixin$ServerGamePacketListenerImplMixin",
     "modifier.ShieldModifierMixin$ServerPlayerMixin",
+    "modifier.TridentModifierMixin",
     "update.UpdateItemInfoMixin$ServerGamePacketListenerImplMixin",
     "update.UpdateItemUseMixin$LivingEntityMixin"
   ],
