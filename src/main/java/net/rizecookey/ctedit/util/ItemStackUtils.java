@@ -68,7 +68,7 @@ public class ItemStackUtils {
         if (isModified() || !shouldBeModified()) return this;
         CompoundTag stackTag = itemStack.getOrCreateTag();
         CompoundTag previousStackTag = stackTag.copy();
-        if (itemStack.getItem() instanceof TieredItem && !hasAttributeModifiers()) {
+        if ((itemStack.getItem() instanceof TieredItem || itemStack.getItem() instanceof TridentItem) && !hasAttributeModifiers()) {
             List<Component> lore = getLore();
             lore.addAll(getModifierTooltip());
             setLore(lore);
