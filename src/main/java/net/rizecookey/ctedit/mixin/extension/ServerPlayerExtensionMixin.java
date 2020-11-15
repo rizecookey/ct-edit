@@ -22,14 +22,9 @@ public abstract class ServerPlayerExtensionMixin extends Player implements Serve
         int cooldown = 0;
         for (ItemStack itemStack : this.getHandSlots()) {
             if (itemStack.getItem() instanceof ShieldItem) {
-                if (itemStack.getTagElement("BlockEntityTag") != null && this.getAttackStrengthScale(0.0F) < 2.0F) {
+                if (this.getAttackStrengthScale(0.0F) < 1.0F) {
                     enableCooldown = force || !this.getCooldowns().isOnCooldown(Items.SHIELD);
                     cooldown = this.attackStrengthTicker;
-                    break;
-                }
-                else if (this.isCrouching() && this.isBlocking() && this.hasEnabledShieldOnCrouch()) {
-                    enableCooldown = true;
-                    cooldown += 4;
                     break;
                 }
             }

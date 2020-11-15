@@ -33,11 +33,11 @@ dependencies {
 
 // Custom Manifest and Intermediary mappings declaration
 minecraft {
-	customManifest = "https://gist.githubusercontent.com/rizecookey/4c6142baaccc3875f9b227fe22f2ace5/raw/c8ed74b19f7a5315813c9d4b199798b692a8f359/1.16_combat-6.json"
+	/*customManifest = "https://gist.githubusercontent.com/rizecookey/4c6142baaccc3875f9b227fe22f2ace5/raw/c8ed74b19f7a5315813c9d4b199798b692a8f359/1.16_combat-6.json"
 	intermediaryUrl = { mcVersion ->
 		return "https://maven.combatreforged.com/net/fabricmc/intermediary/${mcVersion}/intermediary-${mcVersion}-v2.jar";
 	}
-	accessWidener "src/main/resources/ctedit.accesswidener"
+	accessWidener "src/main/resources/ctedit.accesswidener"*/
 }
 
 processResources {
