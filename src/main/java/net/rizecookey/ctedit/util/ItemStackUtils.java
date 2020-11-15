@@ -192,6 +192,6 @@ public class ItemStackUtils {
     }
 
     public boolean shouldBeModified() {
-        return (itemStack.getItem() instanceof TieredItem && !hasAttributeModifiers()) || itemStack.getItem() instanceof ShieldItem;
+        return ((itemStack.getItem() instanceof TieredItem || itemStack.getItem() instanceof TridentItem) && !hasAttributeModifiers()) || itemStack.getItem() instanceof ShieldItem;
     }
 }
