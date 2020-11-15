@@ -30,7 +30,7 @@ public class ItemsModifierMixin {
                         newItem = new SwordItem(((SwordItem) item).getTier(), 3, -2.0F, ((ItemExtension) item).getProperties());
                     }
                     else if (item instanceof AxeItem) {
-                        newItem = AxeItemBuilder.construct(((AxeItem) item).getTier(), 5.0F, -2.6F, ((ItemExtension) item).getProperties());
+                        newItem = AxeItemBuilder.construct(((AxeItem) item).getTier(), 5.0F, -2.8F, ((ItemExtension) item).getProperties());
                     }
                     else if (item instanceof PickaxeItem) {
                         newItem = PickaxeItemBuilder.construct(((PickaxeItem) item).getTier(), 2, -2.4F, ((ItemExtension) item).getProperties());

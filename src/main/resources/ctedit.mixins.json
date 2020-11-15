@@ -12,6 +12,7 @@
     "extension.ItemExtensionMixin",
     "extension.ServerPlayerExtensionMixin",
     "modifier.AttackModifierMixin$PlayerMixin",
+    "modifier.HungerRegenModifierMixin$FoodDataMixin",
     "modifier.IncomingPacketModifierMixin$ServerboundContainerClickPacketMixin",
     "modifier.IncomingPacketModifierMixin$ServerboundSetCreativeModeSlotPacketMixin",
     "modifier.ItemsModifierMixin$ItemsMixin",
