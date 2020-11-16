@@ -11,6 +11,7 @@
     "accessor.ItemAccessor",
     "extension.ItemExtensionMixin",
     "extension.ServerPlayerExtensionMixin",
+    "modifier.AttackModifierMixin$LivingEntityMixin",
     "modifier.AttackModifierMixin$PlayerMixin",
     "modifier.HungerRegenModifierMixin$FoodDataMixin",
     "modifier.IncomingPacketModifierMixin$ServerboundContainerClickPacketMixin",
