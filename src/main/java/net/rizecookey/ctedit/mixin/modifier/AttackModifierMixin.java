@@ -51,25 +51,17 @@ public abstract class AttackModifierMixin {
             if (damageSource.getEntity() instanceof Player) {
                 Player damageSourcePlayer = (Player) damageSource.getEntity();
                 invulTime = (int) Mth.clamp(damageSourcePlayer.getCurrentItemAttackStrengthDelay() * 0.8, 8.0, 20.0);
-            }
-            else if (damageSource.isProjectile()) {
+            } else if (damageSource.isProjectile()) {
                 invulTime = -10;
             }
 
             this.invulnerableTime = invulTime + 10;
         }
 
-        @Unique float cache_f;
-        @Inject(method = "knockback", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;setDeltaMovement(DDD)V", shift = At.Shift.BEFORE))
-        public void grabKnockbackArgs(float f, double d, double e, CallbackInfo ci) {
-            this.cache_f = f;
-        }
-
-        @ModifyArg(method = "knockback", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;setDeltaMovement(DDD)V"), index = 1)
-        public double modifyY(double x, double y, double z) {
-            Vec3 vec3 = this.getDeltaMovement();
-            float f = this.cache_f;
-            return this.onGround ? Math.min(0.4D, (double)f * 0.75D) : Math.min(0.4D, vec3.y + (double)f * 0.5D);
+        @Redirect(method = "knockback", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;setDeltaMovement(DDD)V", ordinal = 0))
+        public void modifyKnockback(LivingEntity livingEntity, double x, double y, double z, float strength, double directionX, double directionZ) {
+            Vec3 deltaMovement = this.getDeltaMovement();
+            this.setDeltaMovement(x, this.onGround ? Math.min(0.4D, strength * 0.75D) : Math.min(0.4D, deltaMovement.y + strength * 0.5D), z);
         }
     }
 }
