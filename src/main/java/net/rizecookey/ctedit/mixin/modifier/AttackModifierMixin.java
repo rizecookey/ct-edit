@@ -33,7 +33,7 @@ public abstract class AttackModifierMixin {
         public void injectCritDisabling(LivingEntity livingEntity, CallbackInfo ci) {
             boolean isCrit = !this.onClimbable() && !this.isInWater() && !this.hasEffect(MobEffects.BLINDNESS) && !this.isPassenger() && this.fallDistance > 0.0F && !this.onGround;
             if (!(this.getMainHandItem().getItem() instanceof AxeItem) && this.getAttackStrengthScale(0.0F) >= 2.0F && isCrit) {
-                livingEntity.disableShield(0.5F);
+                livingEntity.disableShield(0.8F);
             }
         }
     }
