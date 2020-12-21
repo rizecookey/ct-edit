@@ -11,6 +11,7 @@
     "accessor.WeaponTypeAccessor",
     "extension.ServerPlayerExtensionMixin",
     "modifier.AttackModifierMixin$LivingEntityMixin",
+    "modifier.AttackModifierMixin$PlayerMixin",
     "modifier.IncomingPacketModifierMixin$ServerboundContainerClickPacketMixin",
     "modifier.IncomingPacketModifierMixin$ServerboundSetCreativeModeSlotPacketMixin",
     "modifier.OutgoingPacketModifierMixin$ServerGamePacketListenerImplMixin",
