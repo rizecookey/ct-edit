@@ -18,11 +18,10 @@ public abstract class WeaponMetadataMixin {
             }
         }
 
-
-        @Inject(method = "getDamage", at = @At("RETURN"), cancellable = true)
-        public void modifyDamage(Tier tier, CallbackInfoReturnable<Float> cir) {
-            if ((Object) this == WeaponType.AXE) {
-                cir.setReturnValue(tier.getAttackDamageBonus() + 4.0F);
+        @Inject(method = "getSpeed", at = @At("RETURN"), cancellable = true)
+        public void modifySpeed(Tier tier, CallbackInfoReturnable<Float> cir) {
+            if ((Object) this == WeaponType.SWORD) {
+                cir.setReturnValue(0.0F);
             }
         }
     }
