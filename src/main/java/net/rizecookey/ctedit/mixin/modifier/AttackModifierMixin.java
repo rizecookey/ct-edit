@@ -28,9 +28,6 @@ public abstract class AttackModifierMixin {
             super(entityType, level);
         }
 
-        @Invoker
-        public abstract void setSharedFlag(int i, boolean b);
-
         @ModifyVariable(method = "attack", at = @At(value = "STORE"), index = 8)
         public boolean mustSprint(boolean bl) {
             return bl && !this.isSprinting();
